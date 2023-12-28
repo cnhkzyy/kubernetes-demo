@@ -1,8 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  labels:
-    app: myjob
+  name: myjob
 spec:
   template:
     metadata:
