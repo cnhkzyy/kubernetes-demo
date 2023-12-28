@@ -12,4 +12,5 @@ spec:
         image: busybox
         #command: ['echo', 'hello k8s job! ']
         command: ['invalid_command', 'hello k8s job! ']
-      restartPolicy: Never
+      #restartPolicy: Never
+      restartPolicy: OnFailure
