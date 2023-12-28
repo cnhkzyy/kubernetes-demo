@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: myjob
+spec:
+  template:
+    metadata:
+      name: myjob
+    spec:
+      containers:
+      - name: hello
+        image: busybox
+        command: ['echo', 'hello k8s job! ']
+      restartPolicy: Never
