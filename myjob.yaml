@@ -10,5 +10,6 @@ spec:
       containers:
       - name: hello
         image: busybox
-        command: ['echo', 'hello k8s job! ']
+        #command: ['echo', 'hello k8s job! ']
+        command: ['invalid_command', 'hello k8s job! ']
       restartPolicy: Never
