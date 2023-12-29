@@ -4,7 +4,7 @@ metadata:
   name: httpd-svc
 spec:
   selector:
-    run: httpd
+    app: httpd
   ports:
   - protocol: TCP
     port: 8080
