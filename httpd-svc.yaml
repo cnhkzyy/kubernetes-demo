@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: httpd-svc
 spec:
+  type: NodePort
   selector:
     app: httpd
   ports:
