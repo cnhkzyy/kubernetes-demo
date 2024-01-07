@@ -11,6 +11,7 @@ def check_redis():
     try:
         r = redis.Redis(host='192.168.1.155', port=30001)
         result = r.ping()
+        print(f"result: {result}")
 
         if result == True:
             return "成功连接到redis", 200
