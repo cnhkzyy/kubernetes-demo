@@ -35,14 +35,14 @@ spec:
     spec:
       initContainers:
       - name: init-redis
-        image: hub.ityy.ultrapower.com.cn:5050/middleware/busybox:1.1.1 #初始化容器镜像
+        image: busybox #初始化容器镜像
         command: ['sh', '-c', 'mkdir -p /redis/log/;mkdir -p /redis/conf/;mkdir -p /redis/data/']
         volumeMounts:
         - name: data
           mountPath: /redis/
       containers:
       - name: redis
-        image: hub.ityy.ultrapower.com.cn:5050/middleware/redis:4.0.6
+        image: redis
         imagePullPolicy: IfNotPresent
         command:
         - sh
