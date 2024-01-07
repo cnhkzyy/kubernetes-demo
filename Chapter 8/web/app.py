@@ -1,22 +1,18 @@
 import time
-import socket
+import random
 import redis
 from flask import Flask
 
 app = Flask(__name__)
 
-hostname = socket.gethostname()
 
 
 
 @app.route('/healthy')
 def check_redis():
-    host = None
     try:
-        if hostname == "k8s-node1":
-            host = "192.168.1.125"
-        elif hostname == "k8s-node2":
-            host = "192.168.1.155"
+        hosts= ["192.168.1.125", "192.168.1.155"]
+        host = random.choices(hosts)
         r = redis.Redis(host=host, port=30001)
         result = r.ping()
         print(f"host: {host}, result: {result}")
