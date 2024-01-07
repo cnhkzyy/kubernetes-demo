@@ -153,4 +153,4 @@ spec:
   ports:
   - port: 6379
     targetPort: 6379
-    nodePort: 6379
+    nodePort: 30000
