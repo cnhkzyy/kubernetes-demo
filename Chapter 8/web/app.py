@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/healthy')
 def check_redis():
     try:
-        r = redis.Redis(host='redis', port=6379)
+        r = redis.Redis(host='192.168.1.125', port=30001)
         result = r.ping()
 
         if result == True:
