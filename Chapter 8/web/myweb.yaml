@@ -17,7 +17,7 @@ spec:
         image:  beck123/myweb  
         readinessProbe:
           httpGet:
-            shceme: HTTP 
+            scheme: HTTP 
             path: /healthy 
             port: 5000
           initialDelaySeconds: 10
