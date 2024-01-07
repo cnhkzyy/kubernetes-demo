@@ -1,17 +1,25 @@
 import time
-
+import socket
 import redis
 from flask import Flask
 
 app = Flask(__name__)
 
+hostname = socket.gethostname()
+
+
 
 @app.route('/healthy')
 def check_redis():
+    host = None
     try:
-        r = redis.Redis(host='192.168.1.155', port=30001)
+        if hostname == "k8s-node1":
+            host = "192.168.1.125"
+        elif hostname == "k8s-node2":
+            host = "192.168.1.155"
+        r = redis.Redis(host=host, port=30001)
         result = r.ping()
-        print(f"result: {result}")
+        print(f"host: {host}, result: {result}")
 
         if result == True:
             return "成功连接到redis", 200
