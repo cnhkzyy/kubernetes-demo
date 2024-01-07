@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  label:
+  labels:
     test: healthcheck
   name: healthcheck
 spec:
