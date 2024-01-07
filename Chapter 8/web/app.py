@@ -12,7 +12,7 @@ app = Flask(__name__)
 def check_redis():
     try:
         hosts= ["192.168.1.125", "192.168.1.155"]
-        host = random.choices(hosts)
+        host = random.choice(hosts)
         r = redis.Redis(host=host, port=30001)
         result = r.ping()
         print(f"host: {host}, result: {result}")
